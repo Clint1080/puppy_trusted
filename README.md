@@ -1,5 +1,7 @@
 # Puppy Trusted
 
+The purpose of this app is to allow animal breeders to track all data related to breeding their animals. I will be starting with Dogs first but eventually would like to make it something any breeder can use, for ex. farmers
+
 ## Features, as a breeder I can..
 
 ### MVP features
@@ -19,3 +21,4 @@
 - Create my own D wormer schedule.
 - Create a custom schedule / timer for setting reminders for example if you have a newborn puppy that needs to be fed every two hours.
   Create more than one Kennel
+- A lot more coming ...
