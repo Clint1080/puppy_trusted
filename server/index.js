@@ -13,8 +13,8 @@ const kController = require("./controllers/kennelController");
 const aController = require("./controllers/animalController");
 
 // kennel
-app.post("/kennel", kController.postAnimal);
+app.post("/kennel", kController.postKennel);
 
 // animals
-
+app.post("/animal", aController.postAnimal);
 app.listen(3001, () => console.log("server is running on 3001"));

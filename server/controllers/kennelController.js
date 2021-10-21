@@ -1,6 +1,6 @@
 const pool = require("../db");
 module.exports = {
-  postAnimal: async (req, res) => {
+  postKennel: async (req, res) => {
     try {
       const { kennelName } = req.body;
       await pool.query("INSERT INTO kennel (name) VALUES($1)", [kennelName]);
