@@ -1,0 +1,12 @@
+.create_kennel {
+  &.container {
+    margin: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    margin-top: 0.75rem;
+  }
+}

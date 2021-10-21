@@ -1,0 +1,15 @@
+.add_animal {
+  &.container {
+    margin: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-top: 1rem;
+  }
+  button {
+    margin-top: 0.75rem;
+  }
+}
