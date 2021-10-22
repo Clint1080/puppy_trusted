@@ -23,7 +23,10 @@ animal_id SERIAL PRIMARY KEY,
 name VARCHAR(50),
 kennel_id INTEGER NOT NULL REFERENCES kennel(kennel_id),
 gender VARCHAR(1),
+microchip VARCHAR(15),
 profile_image VARCHAR(100),
 images_folder VARCHAR(100),
-birth_date DATE
+birth_date DATE,
+markings VARCHAR(255),
+birth_weight VARCHAR(50)
 );

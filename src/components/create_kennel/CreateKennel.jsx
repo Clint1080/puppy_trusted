@@ -4,6 +4,7 @@ import Button from "../button/Button";
 import "./create_kennel.scss";
 
 const CreateKennel = () => {
+  // Setting states
   const [kennelName, setKennelName] = useState("");
 
   const handleSubmit = (e) => {

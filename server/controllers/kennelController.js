@@ -8,4 +8,12 @@ module.exports = {
       console.log(err.message);
     }
   },
+  getKennels: async (req, res) => {
+    try {
+      const allKennels = await pool.query("SELECT * FROM kennel");
+      res.json(allKennels);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
