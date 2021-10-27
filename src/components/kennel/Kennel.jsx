@@ -36,12 +36,12 @@ const Kennel = ({ baseURL }) => {
   });
 
   return (
-    <div className="kennel container">
+    <main className="kennel container">
       <h2>Your kennels</h2>
       <ul className="all_kennels">{showKennels}</ul>
       <CreateKennel baseURL={baseURL} />
       <Animals kennelId={kennelId} baseURL={baseURL} />
-    </div>
+    </main>
   );
 };
 

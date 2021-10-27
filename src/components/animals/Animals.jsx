@@ -6,6 +6,7 @@ import "./animals.scss";
 
 // Child Components
 import AddAnimal from "../add_animal/AddAnimal";
+import Button from "../button/Button";
 
 const Animals = ({ kennelId, baseURL }) => {
   // Setting animals state by current state of kennelId
@@ -29,6 +30,12 @@ const Animals = ({ kennelId, baseURL }) => {
     getAnimals();
     getKennelName();
   }, [kennelId]);
+
+  // this is how I will delete an animal
+  // onClick={(e) => {
+  //             if (window.confirm("Are you sure you wish to delete this item?"))
+  //               this.deleteItem(e);
+  //           }}
 
   const showAnimals = animals.map((animal) => {
     return (
@@ -57,6 +64,10 @@ const Animals = ({ kennelId, baseURL }) => {
           <span>Unique Markings: </span>
           {animal.markings}
         </li>
+        <div className="button_container">
+          <Button text="Edit" type="button" />
+          <Button text="Delete" type="button" />
+        </div>
       </ul>
     );
   });
@@ -64,7 +75,7 @@ const Animals = ({ kennelId, baseURL }) => {
   return (
     <section className="animals">
       <div className="all_animals container">
-        <h2>{kennelName}</h2>
+        <h2>Kennel: {kennelName}</h2>
         {showAnimals}
       </div>
       <AddAnimal baseURL={baseURL} kennelId={kennelId} />
