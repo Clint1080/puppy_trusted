@@ -44,10 +44,9 @@ const AddAnimal = ({ baseURL, kennelId }) => {
         <input
           id="gender"
           type="text"
+          value={gender}
           onChange={(e) => {
-            setTimeout(() => {
-              setGender(e.target.value);
-            }, 500);
+            setGender(e.target.value);
           }}
         />
 
@@ -55,10 +54,9 @@ const AddAnimal = ({ baseURL, kennelId }) => {
         <input
           type="text"
           id="microchip"
+          value={microchip}
           onChange={(e) => {
-            setTimeout(() => {
-              setMicrochip(e.target.value);
-            }, 500);
+            setMicrochip(e.target.value);
           }}
         />
 
@@ -66,10 +64,9 @@ const AddAnimal = ({ baseURL, kennelId }) => {
         <input
           type="text"
           id="birthdate"
+          value={birthDate}
           onChange={(e) => {
-            setTimeout(() => {
-              setBirthDate(e.target.value);
-            }, 500);
+            setBirthDate(e.target.value);
           }}
         />
 
@@ -77,10 +74,9 @@ const AddAnimal = ({ baseURL, kennelId }) => {
         <input
           type="text"
           id="markings"
+          value={markings}
           onChange={(e) => {
-            setTimeout(() => {
-              setMarkings(e.target.value);
-            }, 500);
+            setMarkings(e.target.value);
           }}
         />
 
@@ -88,10 +84,9 @@ const AddAnimal = ({ baseURL, kennelId }) => {
         <input
           type="text"
           id="weight"
+          value={birthWeight}
           onChange={(e) => {
-            setTimeout(() => {
-              setBirthWeight(e.target.value);
-            }, 500);
+            setBirthWeight(e.target.value);
           }}
         />
 

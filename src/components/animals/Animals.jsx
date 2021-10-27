@@ -62,13 +62,13 @@ const Animals = ({ kennelId, baseURL }) => {
   });
 
   return (
-    <div className="animals">
+    <section className="animals">
       <div className="all_animals container">
         <h2>{kennelName}</h2>
         {showAnimals}
       </div>
       <AddAnimal baseURL={baseURL} kennelId={kennelId} />
-    </div>
+    </section>
   );
 };
 
