@@ -1,0 +1,23 @@
+.animals {
+  ul {
+    margin: 2rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+  }
+  li {
+    list-style-type: none;
+    background-color: #f4f4f4;
+    min-width: 13rem;
+
+    margin: 0.5rem 1rem;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2px;
+  }
+  span {
+    font-weight: bold;
+  }
+}

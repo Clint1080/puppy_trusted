@@ -3,7 +3,7 @@ import axios from "axios";
 import Kennel from "../kennel/Kennel";
 import Header from "../header/Header";
 import Login from "../login/Login";
-import AddAnimal from "../add_animal/AddAnimal";
+import Footer from "../footer/Footer";
 
 import "./app.scss";
 import Animals from "../animals/Animals";
@@ -15,6 +15,7 @@ function App() {
       <Header />
       {/* <Login /> */}
       <Kennel baseURL={baseURL} />
+      <Footer />
     </div>
   );
 }

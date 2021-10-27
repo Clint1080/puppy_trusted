@@ -1,9 +1,33 @@
+// This is for the list of kennels
 .kennel {
-  ul {
+  &.container {
+    padding: 0 1rem;
+  }
+  ul.all_kennels {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding-left: 0;
   }
-  li {
+  li.kennel_card {
+    &:first-child {
+      margin-left: 0;
+    }
     list-style-type: none;
+    border: 1px solid #333333;
+    background-color: #f4f4f4;
+    min-width: 13rem;
+    min-height: 13rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+  }
+  h3.kennel_name {
+    padding: 0;
+    margin: 0;
   }
 }

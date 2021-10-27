@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "../button/Button";
 import "./add_animal.scss";
 
-const AddAnimal = (kennelId) => {
+const AddAnimal = ({ baseURL, kennelId }) => {
   // Setting states
   const [animalName, setAnimalName] = useState("");
   const [gender, setGender] = useState("");
@@ -14,25 +14,33 @@ const AddAnimal = (kennelId) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/animal", { animalName, kennelId, gender, microchip, birthDate, markings, birthWeight });
+    axios.post("http://localhost:3001/animals", {
+      animalName,
+      kennelId,
+      gender,
+      microchip,
+      birthDate,
+      markings,
+      birthWeight,
+    });
+    setAnimalName("");
   };
 
   return (
-    <div className="container add_animal">
+    <div className="add_animal">
       <h2>Add a new animal</h2>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="animalName">Dog name</label>
         <input
           id="animalName"
           type="text"
+          value={animalName}
           onChange={(e) => {
-            setTimeout(() => {
-              setAnimalName(e.target.value);
-            }, 500);
+            setAnimalName(e.target.value);
           }}
         />
 
-        <label htmlFor="gender">Genger M or F</label>
+        <label htmlFor="gender">Gender M or F</label>
         <input
           id="gender"
           type="text"

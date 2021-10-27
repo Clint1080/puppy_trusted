@@ -1,8 +1,14 @@
 .header {
   display: flex;
   justify-content: space-between;
-
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #c4c4c4;
   .logo {
-    max-width: 180px;
+    max-width: 14rem;
+  }
+  ul {
+    background-color: #c4c4c4;
+    margin: 0 1.25rem;
   }
 }

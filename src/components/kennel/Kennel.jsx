@@ -10,10 +10,11 @@ const Kennel = ({ baseURL }) => {
   // Getting all kennels for current user
   const [userKennels, setUserKennels] = useState([]);
   // Using kennel id as session for anything related to a kennel
-  const [kennelId, setKennelId] = useState(0);
+  const [kennelId, setKennelId] = useState(1);
 
+  // Get all kennels
   const getKennels = async () => {
-    const res = await axios.get(`${baseURL}/kennel`);
+    const res = await axios.get(`${baseURL}/kennels`);
     setUserKennels(res.data.rows);
   };
 
@@ -23,8 +24,8 @@ const Kennel = ({ baseURL }) => {
 
   const showKennels = userKennels.map((kennel) => {
     return (
-      <li key={kennel.kennel_id} className="kennel">
-        {kennel.name}
+      <li key={kennel.kennel_id} className="kennel_card">
+        <h3 className="kennel_name">{kennel.name}</h3>
         <Button
           click={() => setKennelId(kennel.kennel_id)}
           text="Select Kennel"
@@ -35,11 +36,11 @@ const Kennel = ({ baseURL }) => {
   });
 
   return (
-    <div className="kennel">
-      <ul>{showKennels}</ul>
-      <CreateKennel />
-      <ul className="allKennels"></ul>
-      <Animals kennelId={kennelId} />
+    <div className="kennel container">
+      <h2>Your kennels</h2>
+      <ul className="all_kennels">{showKennels}</ul>
+      <CreateKennel baseURL={baseURL} />
+      <Animals kennelId={kennelId} baseURL={baseURL} />
     </div>
   );
 };

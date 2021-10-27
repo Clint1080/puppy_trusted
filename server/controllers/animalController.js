@@ -1,7 +1,7 @@
 const pool = require("../db");
 
 module.exports = {
-  postAnimal: async (req, res) => {
+  createAnimal: async (req, res) => {
     try {
       const {
         animalName,
@@ -13,11 +13,11 @@ module.exports = {
         birthWeight,
       } = req.body;
 
-      await pool.query(
+      const newAnimal = await pool.query(
         "INSERT INTO animals (name, kennel_id, gender, microchip, birth_date, markings, birth_weight) VALUES($1, $2, $3, $4, $5, $6, $7)",
         [
           animalName,
-          kennelId.kennelId,
+          kennelId,
           gender,
           microchip,
           birthDate,
@@ -25,6 +25,27 @@ module.exports = {
           birthWeight,
         ]
       );
+      res.status(201).json({ data: { animal: newAnimal } });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getAllAnimals: async (_req, res) => {
+    try {
+      const allAnimals = await pool.query(`SELECT * FROM animals`);
+      res.json(allAnimals);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getAnimalsByKennelId: async (req, res) => {
+    try {
+      const { kennelId } = req.params;
+      const allAnimals = await pool.query(
+        `SELECT * FROM animals WHERE kennel_id=$1`,
+        [kennelId]
+      );
+      res.json(allAnimals);
     } catch (error) {
       console.log(error);
     }
