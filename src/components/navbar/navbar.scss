@@ -11,9 +11,6 @@
     display: flex;
     align-items: center;
 
-    .hamburger {
-      margin: 0 1.25rem 0 0;
-    }
     ul {
       display: flex;
       flex-direction: column;
@@ -29,6 +26,21 @@
     }
     li {
       margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    a {
+      margin-left: 1rem;
+    }
+    .hamburger {
+      margin: 0 1.25rem 0 0;
+    }
+    .profile_icon,
+    .logout_icon {
+      color: #ffffff;
+      margin-left: 1rem;
     }
     @media screen and (min-width: 767px) {
       display: none;

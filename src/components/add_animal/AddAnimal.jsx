@@ -24,11 +24,16 @@ const AddAnimal = ({ baseURL, kennelId }) => {
       birthWeight,
     });
     setAnimalName("");
+    setGender("");
+    setMicrochip("");
+    setBirthDate("");
+    setMarkings("");
+    setBirthWeight("");
   };
 
   return (
     <div className="add_animal">
-      <h2>Add a new animal</h2>
+      <h2>Add a new dog</h2>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="animalName">Dog name</label>
         <input

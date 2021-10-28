@@ -30,6 +30,15 @@ module.exports = {
       console.log(error);
     }
   },
+  deleteAnimal: (req, res) => {
+    try {
+      const { animalId } = req.params;
+      pool.query(`DELETE FROM animals WHERE animal_id=$1`, [animalId]);
+      res.status(204);
+    } catch (error) {
+      console.log(error);
+    }
+  },
   getAllAnimals: async (_req, res) => {
     try {
       const allAnimals = await pool.query(`SELECT * FROM animals`);
@@ -45,7 +54,7 @@ module.exports = {
         `SELECT * FROM animals WHERE kennel_id=$1`,
         [kennelId]
       );
-      res.json(allAnimals);
+      res.status(200).json(allAnimals);
     } catch (error) {
       console.log(error);
     }

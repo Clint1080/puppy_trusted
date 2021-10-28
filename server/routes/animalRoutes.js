@@ -9,7 +9,9 @@ router
   .get(animalController.getAllAnimals)
   .post(animalController.createAnimal);
 
+router.route("/:animalId").delete(animalController.deleteAnimal);
+
 router.route("/:kennelId").get(animalController.getAnimalsByKennelId);
 //   .patch(animalController.updateUser)
-//   .delete(animalController.deleteUser);
+
 module.exports = router;

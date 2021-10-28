@@ -11,8 +11,9 @@ import Button from "../button/Button";
 const Animals = ({ kennelId, baseURL }) => {
   // Setting animals state by current state of kennelId
   const [animals, setAnimals] = useState([]);
+  const [debouncedAnimals, setDebouncedAnimals] = useState(animals);
 
-  // Setting the kennel name as state
+  // Setting the kennel name from kennel id as state
   const [kennelName, setKennelName] = useState("");
 
   const getAnimals = async () => {
@@ -31,11 +32,10 @@ const Animals = ({ kennelId, baseURL }) => {
     getKennelName();
   }, [kennelId]);
 
-  // this is how I will delete an animal
-  // onClick={(e) => {
-  //             if (window.confirm("Are you sure you wish to delete this item?"))
-  //               this.deleteItem(e);
-  //           }}
+  // const editAnimal = () => {};
+  const deleteAnimal = async (animalId) => {
+    await axios.delete(`${baseURL}/animals/${animalId}`);
+  };
 
   const showAnimals = animals.map((animal) => {
     return (
@@ -65,8 +65,18 @@ const Animals = ({ kennelId, baseURL }) => {
           {animal.markings}
         </li>
         <div className="button_container">
-          <Button text="Edit" type="button" />
-          <Button text="Delete" type="button" />
+          {/* <form action="" onSubmit={editAnimal}>
+            <Button text="Edit" type="submit" />
+          </form> */}
+          <form
+            action=""
+            onSubmit={(e) => {
+              e.preventDefault();
+              deleteAnimal(animal.animal_id);
+            }}
+          >
+            <Button text="Delete" type="submit" />
+          </form>
         </div>
       </ul>
     );

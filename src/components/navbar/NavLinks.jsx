@@ -1,20 +1,15 @@
+import { AiOutlineProfile } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
 const NavLinks = () => {
   return (
     <ul>
       <li>
-        <a href="">Profile</a>
+        <AiOutlineProfile className="profile_icon" />
+        <a href="/">Profile</a>
       </li>
       <li>
-        <a href="">test 1</a>
-      </li>
-      <li>
-        <a href="">test 2</a>
-      </li>
-      <li>
-        <a href="">test 3</a>
-      </li>
-      <li>
-        <a href="">test 4</a>
+        <AiOutlineLogout className="logout_icon" />
+        <a href="/">Log Out</a>
       </li>
     </ul>
   );
