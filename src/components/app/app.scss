@@ -1,8 +1,25 @@
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+button {
+  font-family: "Oswald", sans-serif;
+}
 h2 {
   font-size: 2em;
+  font-weight: 600;
 }
-$mobile_breakpoint: 767px;
+//This wrapper wraps everything between header and footer
+.App {
+  @media screen and (min-width: 767px) {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+}
+// $mobile_breakpoint: 767px;
 
-:export {
-  mobile_breakpoint: $mobile_breakpoint;
-}
+// :export {
+//   mobile_breakpoint: $mobile_breakpoint;
+// }

@@ -11,7 +11,7 @@ import Button from "../button/Button";
 const Animals = ({ kennelId, baseURL }) => {
   // Setting animals state by current state of kennelId
   const [animals, setAnimals] = useState([]);
-  const [debouncedAnimals, setDebouncedAnimals] = useState(animals);
+  const [debouncedAnimals, setDebouncedAnimals] = useState(null);
 
   // Setting the kennel name from kennel id as state
   const [kennelName, setKennelName] = useState("");
@@ -19,6 +19,7 @@ const Animals = ({ kennelId, baseURL }) => {
   const getAnimals = async () => {
     const res = await axios.get(`${baseURL}/animals/${kennelId}`);
     setAnimals(res.data.rows);
+    console.log(res.data.rows);
   };
 
   // Getting the name of name of the kennel by kennel_id
@@ -30,11 +31,15 @@ const Animals = ({ kennelId, baseURL }) => {
   useEffect(() => {
     getAnimals();
     getKennelName();
-  }, [kennelId]);
+  }, [kennelId, debouncedAnimals]);
 
   // const editAnimal = () => {};
-  const deleteAnimal = async (animalId) => {
-    await axios.delete(`${baseURL}/animals/${animalId}`);
+  // Sadly this is the only way I figured to update state to rerender my animals without creating a loop
+  const deleteAnimal = (animalId) => {
+    axios.delete(`${baseURL}/animals/${animalId}`);
+    setTimeout(() => {
+      setDebouncedAnimals(Math.random());
+    }, 500);
   };
 
   const showAnimals = animals.map((animal) => {
@@ -88,7 +93,11 @@ const Animals = ({ kennelId, baseURL }) => {
         <h2>Kennel: {kennelName}</h2>
         {showAnimals}
       </div>
-      <AddAnimal baseURL={baseURL} kennelId={kennelId} />
+      <AddAnimal
+        baseURL={baseURL}
+        kennelId={kennelId}
+        setDebouncedAnimals={setDebouncedAnimals}
+      />
     </section>
   );
 };

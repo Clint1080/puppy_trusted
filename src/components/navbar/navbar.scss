@@ -1,8 +1,15 @@
 .navbar {
   display: flex;
   align-items: center;
+
+  ul {
+    display: flex;
+  }
+
   li {
     list-style-type: none;
+    display: flex;
+    align-items: center;
     a {
       color: #fff;
     }
@@ -12,7 +19,6 @@
     align-items: center;
 
     ul {
-      display: flex;
       flex-direction: column;
       align-items: center;
       position: absolute;
@@ -26,8 +32,6 @@
     }
     li {
       margin: 1rem 0;
-      display: flex;
-      align-items: center;
       justify-content: flex-start;
       width: 100%;
     }
@@ -49,6 +53,16 @@
   .navigation {
     @media screen and (max-width: 767px) {
       display: none;
+    }
+    ul {
+      flex-direction: row;
+    }
+    li {
+      margin: 0 1rem;
+    }
+    a {
+      color: #333333;
+      margin: 0 0.5rem;
     }
     .hamburger {
       cursor: pointer;

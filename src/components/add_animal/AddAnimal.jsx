@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "../button/Button";
 import "./add_animal.scss";
 
-const AddAnimal = ({ baseURL, kennelId }) => {
+const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
   // Setting states
   const [animalName, setAnimalName] = useState("");
   const [gender, setGender] = useState("");
@@ -29,6 +29,11 @@ const AddAnimal = ({ baseURL, kennelId }) => {
     setBirthDate("");
     setMarkings("");
     setBirthWeight("");
+
+    // Sadly this is the only way I figured to update state to rerender my animals without creating a loop
+    setTimeout(() => {
+      setDebouncedAnimals(Math.random());
+    }, 100);
   };
 
   return (
