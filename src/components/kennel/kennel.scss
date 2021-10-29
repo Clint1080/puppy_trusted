@@ -1,25 +1,35 @@
 // This is for the list of kennels
 .kennel {
   &.container {
-    padding: 0 1rem;
+    @media screen and (max-width: 767px) {
+      padding: 0 1rem;
+    }
   }
   ul.all_kennels {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    padding-left: 0;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 0 1rem 0;
+    @media screen and (min-width: 767px) {
+      flex-wrap: wrap;
+      overflow-x: unset;
+      justify-content: space-between;
+    }
   }
   li.kennel_card {
-    &:first-child {
-      margin-left: 0;
+    @media screen and (max-width: 767px) {
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
     }
     list-style-type: none;
     border: 1px solid #333333;
     background-color: #f4f4f4;
     min-width: 13rem;
     min-height: 13rem;
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,15 +39,5 @@
   h3.kennel_name {
     padding: 0;
     margin: 0;
-  }
-  @media screen and (min-width: 767px) {
-    ul.all_kennels {
-      flex-wrap: wrap;
-    }
-    li.kennel_card {
-      &:first-child {
-        margin-left: 1rem;
-      }
-    }
   }
 }

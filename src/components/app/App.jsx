@@ -13,10 +13,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="main_wrapper">
-        <Kennel baseURL={baseURL} />
-      </div>
       {/* <Login /> */}
+      <Kennel baseURL={baseURL} />
       <Footer />
     </div>
   );

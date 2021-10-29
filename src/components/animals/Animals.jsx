@@ -89,10 +89,8 @@ const Animals = ({ kennelId, baseURL }) => {
 
   return (
     <section className="animals">
-      <div className="all_animals container">
-        <h2>Kennel: {kennelName}</h2>
-        {showAnimals}
-      </div>
+      <h2>Kennel: {kennelName}</h2>
+      <div className="all_animals container">{showAnimals}</div>
       <AddAnimal
         baseURL={baseURL}
         kennelId={kennelId}
