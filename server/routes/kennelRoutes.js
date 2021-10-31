@@ -10,7 +10,7 @@ router
   .get(kennelController.getAllKennels)
   .post(kennelController.createKennel);
 
-// Kennel by Name
+// Kennel by Id
 router.route("/:kennelId").get(kennelController.getKennelName);
 //   .patch(userController.updateUser)
 //   .delete(userController.deleteUser);
