@@ -43,6 +43,7 @@ const Kennel = ({ baseURL }) => {
       <h2>Your kennels</h2>
       <ul className="all_kennels">{showKennels}</ul>
       <Button
+        type="button"
         className="create_kennel_button"
         text="Add A Kennel"
         click={() => {
