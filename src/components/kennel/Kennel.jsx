@@ -40,7 +40,7 @@ const Kennel = ({ baseURL }) => {
 
   return (
     <main className="kennel container">
-      <h2>Your kennels</h2>
+      <h2>My kennels</h2>
       <ul className="all_kennels">{showKennels}</ul>
       <Button
         type="button"
