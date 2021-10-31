@@ -1,5 +1,13 @@
 const pool = require("../db");
 module.exports = {
+  getAllKennels: async (req, res) => {
+    try {
+      const allKennels = await pool.query("SELECT * FROM kennel");
+      res.json(allKennels);
+    } catch (error) {
+      console.log(error);
+    }
+  },
   createKennel: async (req, res) => {
     try {
       const { kennelName } = req.body;
@@ -8,14 +16,6 @@ module.exports = {
       res.status(201).send("New kennel created");
     } catch (err) {
       console.log(err.message);
-    }
-  },
-  getAllKennels: async (req, res) => {
-    try {
-      const allKennels = await pool.query("SELECT * FROM kennel");
-      res.json(allKennels);
-    } catch (error) {
-      console.log(error);
     }
   },
   getKennelName: async (req, res) => {
