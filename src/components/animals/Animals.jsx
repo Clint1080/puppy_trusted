@@ -130,7 +130,7 @@ const Animals = ({ kennelId, baseURL }) => {
   });
 
   // Passing this function to edit animal modal to close the modal(cancel edit)
-  const closeModal = () => {
+  const closeEditModal = () => {
     setShowEditAnimalModal(false);
   };
 
@@ -142,7 +142,7 @@ const Animals = ({ kennelId, baseURL }) => {
         showEditAnimalModal={showEditAnimalModal}
         baseURL={baseURL}
         editAnimalInfo={editAnimalInfo}
-        closeModal={closeModal}
+        closeEditModal={closeEditModal}
         debouncedEditAnimals={debouncedEditAnimals}
         setDebouncedAnimals={setDebouncedAnimals}
       />

@@ -11,6 +11,7 @@ const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
   const [birthDate, setBirthDate] = useState("");
   const [markings, setMarkings] = useState("");
   const [birthWeight, setBirthWeight] = useState("");
+  const [showAddAnimalModal, setShowAddAnimalModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();

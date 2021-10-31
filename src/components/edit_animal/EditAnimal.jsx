@@ -9,7 +9,7 @@ const EditAnimal = ({
   showEditAnimalModal,
   editAnimalInfo,
   baseURL,
-  closeModal,
+  closeEditModal,
   debouncedEditAnimals,
   setDebouncedAnimals,
 }) => {
@@ -57,7 +57,7 @@ const EditAnimal = ({
     setEditBirthDate("");
     setEditMarkings("");
     setEditBirthWeight("");
-    closeModal();
+    closeEditModal();
     // This is so we can rerender all animals after we update
     setDebouncedAnimals(Math.random());
   };
@@ -125,7 +125,7 @@ const EditAnimal = ({
           }}
         />
         <div className="buttons">
-          <Button type="click" text="cancel" click={closeModal} />
+          <Button type="click" text="cancel" click={closeEditModal} />
           <Button type="Submit" text="Save" />
         </div>
       </form>
