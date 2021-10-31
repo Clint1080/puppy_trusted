@@ -144,6 +144,7 @@ const Animals = ({ kennelId, baseURL }) => {
         editAnimalInfo={editAnimalInfo}
         closeModal={closeModal}
         debouncedEditAnimals={debouncedEditAnimals}
+        setDebouncedAnimals={setDebouncedAnimals}
       />
       <AddAnimal
         baseURL={baseURL}

@@ -11,7 +11,7 @@ const EditAnimal = ({
   baseURL,
   closeModal,
   debouncedEditAnimals,
-  // setDebouncedEditAnimals,
+  setDebouncedAnimals,
 }) => {
   const {
     animal_id,
@@ -57,11 +57,9 @@ const EditAnimal = ({
     setEditBirthDate("");
     setEditMarkings("");
     setEditBirthWeight("");
-
-    // Sadly this is the only way I figured to update state to rerender my animals without creating a loop
-    // setTimeout(() => {
-    //   setDebouncedAnimals(Math.random());
-    // }, 100);
+    closeModal();
+    // This is so we can rerender all animals after we update
+    setDebouncedAnimals(Math.random());
   };
 
   if (!showEditAnimalModal) {
