@@ -37,7 +37,9 @@ const Kennel = ({ baseURL }) => {
       </li>
     );
   });
-
+  const setBodyBackgroundNoScroll = () => {
+    const body = document.querySelector("body");
+  };
   return (
     <main className="kennel container">
       <h2>My kennels</h2>
@@ -47,6 +49,7 @@ const Kennel = ({ baseURL }) => {
         className="create_kennel_button"
         text="Add A Kennel"
         click={() => {
+          document.body.classList.add("modal-open");
           setshowCreateKennelModal(true);
         }}
       />

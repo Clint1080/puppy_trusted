@@ -105,6 +105,7 @@ const Animals = ({ kennelId, baseURL }) => {
             type="button"
             click={(e) => {
               e.preventDefault();
+              document.body.classList.add("modal-open");
               setDebouncedEditAnimals(!debouncedEditAnimals);
               editAnimal(
                 animal.animal_id,
@@ -132,10 +133,12 @@ const Animals = ({ kennelId, baseURL }) => {
 
   // Passing this function to edit animal modal to close the modal(cancel edit)
   const closeEditModal = () => {
+    document.body.classList.remove("modal-open");
     setShowEditAnimalModal(false);
   };
 
   const closeAddAnimalModal = () => {
+    document.body.classList.remove("modal-open");
     setShowAddAnimalModal(false);
   };
 
@@ -155,6 +158,7 @@ const Animals = ({ kennelId, baseURL }) => {
         className="add_animal_button"
         text="Add A Dog"
         click={() => {
+          document.body.classList.add("modal-open");
           setShowAddAnimalModal(true);
         }}
       />

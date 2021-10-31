@@ -17,6 +17,7 @@ const CreateKennel = ({
     e.preventDefault();
     axios.post(`${baseURL}/kennels`, { kennelName });
     setDebouncedKennels(!debouncedKennels);
+    document.body.classList.remove("modal-open");
     setshowCreateKennelModal(false);
   };
 
@@ -39,7 +40,10 @@ const CreateKennel = ({
           <Button
             type="button"
             text="cancel"
-            click={() => setshowCreateKennelModal(false)}
+            click={() => {
+              document.body.classList.remove("modal-open");
+              setshowCreateKennelModal(false);
+            }}
           />
           <Button type="Submit" text="Save" />
         </div>
