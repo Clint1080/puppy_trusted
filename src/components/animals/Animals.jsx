@@ -15,8 +15,9 @@ const Animals = ({ kennelId, baseURL }) => {
   const [debouncedAnimals, setDebouncedAnimals] = useState(null);
   const [debouncedEditAnimals, setDebouncedEditAnimals] = useState(false);
 
-  // This is how I am triggering the modal when edit is clicked
+  // This is how I am triggering the modals when edit or add is clicked
   const [showEditAnimalModal, setShowEditAnimalModal] = useState(false);
+  const [showAddAnimalModal, setShowAddAnimalModal] = useState(false);
 
   // This is setting all animal info based on which animals edit button was clicked
   const [editAnimalInfo, setEditAnimalInfo] = useState({});
@@ -134,6 +135,10 @@ const Animals = ({ kennelId, baseURL }) => {
     setShowEditAnimalModal(false);
   };
 
+  const closeAddAnimalModal = () => {
+    setShowAddAnimalModal(false);
+  };
+
   return (
     <section className="animals">
       <h2>Kennel: {kennelName}</h2>
@@ -146,10 +151,19 @@ const Animals = ({ kennelId, baseURL }) => {
         debouncedEditAnimals={debouncedEditAnimals}
         setDebouncedAnimals={setDebouncedAnimals}
       />
+      <Button
+        className="add_animal_button"
+        text="Add A Dog"
+        click={() => {
+          setShowAddAnimalModal(true);
+        }}
+      />
       <AddAnimal
+        showAddAnimalModal={showAddAnimalModal}
         baseURL={baseURL}
         kennelId={kennelId}
         setDebouncedAnimals={setDebouncedAnimals}
+        closeAddAnimalModal={closeAddAnimalModal}
       />
     </section>
   );

@@ -1,3 +1,4 @@
+// This is what all buttons start out with
 button {
   background-color: #ad9a78;
   color: #ffffff;
@@ -5,4 +6,14 @@ button {
   border-style: none;
   border-radius: 5px;
   text-transform: uppercase;
+}
+
+// Anything below is custom for a specific button
+.add_animal_button {
+  width: 100%;
+}
+
+.create_kennel_button {
+  margin-top: 0.75rem;
+  width: 100%;
 }

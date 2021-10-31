@@ -3,7 +3,13 @@ import axios from "axios";
 import Button from "../button/Button";
 import "./add_animal.scss";
 
-const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
+const AddAnimal = ({
+  baseURL,
+  kennelId,
+  setDebouncedAnimals,
+  closeAddAnimalModal,
+  showAddAnimalModal,
+}) => {
   // Setting states
   const [animalName, setAnimalName] = useState("");
   const [gender, setGender] = useState("");
@@ -11,7 +17,6 @@ const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
   const [birthDate, setBirthDate] = useState("");
   const [markings, setMarkings] = useState("");
   const [birthWeight, setBirthWeight] = useState("");
-  const [showAddAnimalModal, setShowAddAnimalModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,10 +42,14 @@ const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
     }, 100);
   };
 
+  if (!showAddAnimalModal) {
+    return null;
+  }
+
   return (
     <div className="add_animal">
-      <h2>Add a new dog</h2>
       <form action="" onSubmit={handleSubmit}>
+        <h2>Add a new dog</h2>
         <label htmlFor="animalName">Dog name</label>
         <input
           id="animalName"
@@ -100,8 +109,10 @@ const AddAnimal = ({ baseURL, kennelId, setDebouncedAnimals }) => {
             setBirthWeight(e.target.value);
           }}
         />
-
-        <Button type="Submit" text="Add Dog" />
+        <div className="buttons">
+          <Button type="click" text="cancel" click={closeAddAnimalModal} />
+          <Button type="Submit" text="Save" />
+        </div>
       </form>
     </div>
   );

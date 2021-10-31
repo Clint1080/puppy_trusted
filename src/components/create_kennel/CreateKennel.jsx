@@ -28,7 +28,11 @@ const CreateKennel = ({ baseURL }) => {
           // value={kennelName}
           onChange={onInputChange}
         />
-        <Button type="submit" text="Create New Kennel" />
+        <Button
+          type="submit"
+          text="Create New Kennel"
+          className="create_kennel_button"
+        />
       </form>
     </div>
   );
