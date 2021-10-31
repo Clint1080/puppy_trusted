@@ -4,7 +4,7 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <div className="footer container">
-      <p>&copy;{Date()} Puppy Trusted</p>
+      <p>&copy;{new Date().getFullYear()} Puppy Trusted</p>
     </div>
   );
 };
