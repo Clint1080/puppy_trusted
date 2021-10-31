@@ -3,21 +3,26 @@ import axios from "axios";
 import Button from "../button/Button";
 import "./create_kennel.scss";
 
-const CreateKennel = ({ baseURL }) => {
+const CreateKennel = ({
+  baseURL,
+  showCreateKennelModal,
+  setshowCreateKennelModal,
+  debouncedKennels,
+  setDebouncedKennels,
+}) => {
   // Setting states
   const [kennelName, setKennelName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${baseURL}/kennels`, { kennelName });
+    setDebouncedKennels(!debouncedKennels);
+    setshowCreateKennelModal(false);
   };
 
-  const onInputChange = (e) => {
-    setTimeout(() => {
-      setKennelName(e.target.value);
-    }, 500);
-  };
-
+  if (!showCreateKennelModal) {
+    return null;
+  }
   return (
     <div className="create_kennel">
       <form action="" onSubmit={handleSubmit}>
@@ -25,14 +30,19 @@ const CreateKennel = ({ baseURL }) => {
         <input
           id="kennelName"
           type="text"
-          // value={kennelName}
-          onChange={onInputChange}
+          value={kennelName}
+          onChange={(e) => {
+            setKennelName(e.target.value);
+          }}
         />
-        <Button
-          type="submit"
-          text="Create New Kennel"
-          className="create_kennel_button"
-        />
+        <div className="buttons">
+          <Button
+            type="button"
+            text="cancel"
+            click={() => setshowCreateKennelModal(false)}
+          />
+          <Button type="Submit" text="Save" />
+        </div>
       </form>
     </div>
   );

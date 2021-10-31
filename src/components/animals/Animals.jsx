@@ -141,7 +141,7 @@ const Animals = ({ kennelId, baseURL }) => {
 
   return (
     <section className="animals">
-      <h2>Kennel: {kennelName}</h2>
+      <h2>{kennelName}</h2>
       <div className="all_animals container">{showAnimals}</div>
       <EditAnimal
         showEditAnimalModal={showEditAnimalModal}

@@ -9,8 +9,11 @@ import Button from "../button/Button";
 const Kennel = ({ baseURL }) => {
   // Getting all kennels for current user
   const [userKennels, setUserKennels] = useState([]);
+  const [debouncedKennels, setDebouncedKennels] = useState(false);
   // Using kennel id as session for anything related to a kennel
   const [kennelId, setKennelId] = useState(1);
+  // This triggers the modal to create kennel
+  const [showCreateKennelModal, setshowCreateKennelModal] = useState(false);
 
   // Get all kennels
   const getKennels = async () => {
@@ -20,7 +23,7 @@ const Kennel = ({ baseURL }) => {
 
   useEffect(() => {
     getKennels();
-  }, []);
+  }, [debouncedKennels]);
 
   const showKennels = userKennels.map((kennel) => {
     return (
@@ -39,7 +42,20 @@ const Kennel = ({ baseURL }) => {
     <main className="kennel container">
       <h2>Your kennels</h2>
       <ul className="all_kennels">{showKennels}</ul>
-      <CreateKennel baseURL={baseURL} />
+      <Button
+        className="create_kennel_button"
+        text="Add A Kennel"
+        click={() => {
+          setshowCreateKennelModal(true);
+        }}
+      />
+      <CreateKennel
+        baseURL={baseURL}
+        showCreateKennelModal={showCreateKennelModal}
+        setshowCreateKennelModal={setshowCreateKennelModal}
+        debouncedKennels={debouncedKennels}
+        setDebouncedKennels={setDebouncedKennels}
+      />
       <Animals kennelId={kennelId} baseURL={baseURL} />
     </main>
   );

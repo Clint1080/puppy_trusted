@@ -39,7 +39,6 @@ const EditAnimal = ({
   useEffect(() => {
     settingDefaultState();
   }, [debouncedEditAnimals]);
-  console.log(editAnimalName);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,15 +50,10 @@ const EditAnimal = ({
       editMarkings,
       editBirthWeight,
     });
-    setEditAnimalName("");
-    setEditGender("");
-    setEditMicrochip("");
-    setEditBirthDate("");
-    setEditMarkings("");
-    setEditBirthWeight("");
-    closeEditModal();
+
     // This is so we can rerender all animals after we update
     setDebouncedAnimals(Math.random());
+    closeEditModal();
   };
 
   if (!showEditAnimalModal) {
@@ -74,7 +68,7 @@ const EditAnimal = ({
         <input
           id="animalName"
           type="text"
-          value={editAnimalName}
+          placeholder={name}
           onChange={(e) => {
             setEditAnimalName(e.target.value);
           }}
@@ -83,7 +77,7 @@ const EditAnimal = ({
         <input
           id="gender"
           type="text"
-          value={editGender}
+          placeholder={gender}
           onChange={(e) => {
             setEditGender(e.target.value);
           }}
@@ -92,7 +86,7 @@ const EditAnimal = ({
         <input
           type="text"
           id="microchip"
-          value={editMicrochip}
+          placeholder={microchip}
           onChange={(e) => {
             setEditMicrochip(e.target.value);
           }}
@@ -101,7 +95,7 @@ const EditAnimal = ({
         <input
           type="text"
           id="birthdate"
-          value={editBirthDate}
+          placeholder={birth_date}
           onChange={(e) => {
             setEditBirthDate(e.target.value);
           }}
@@ -110,7 +104,7 @@ const EditAnimal = ({
         <input
           type="text"
           id="markings"
-          value={editMarkings}
+          placeholder={markings}
           onChange={(e) => {
             setEditMarkings(e.target.value);
           }}
@@ -119,13 +113,13 @@ const EditAnimal = ({
         <input
           type="text"
           id="weight"
-          value={editBirthWeight}
+          placeholder={birth_weight}
           onChange={(e) => {
             setEditBirthWeight(e.target.value);
           }}
         />
         <div className="buttons">
-          <Button type="click" text="cancel" click={closeEditModal} />
+          <Button type="button" text="cancel" click={closeEditModal} />
           <Button type="Submit" text="Save" />
         </div>
       </form>

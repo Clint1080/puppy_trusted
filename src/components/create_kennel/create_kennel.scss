@@ -1,6 +1,25 @@
 .create_kennel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   form {
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-width: 96vw;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }
