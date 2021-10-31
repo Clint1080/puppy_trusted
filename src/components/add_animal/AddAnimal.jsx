@@ -83,7 +83,7 @@ const AddAnimal = ({
 
         <label htmlFor="birthdate">Birth Date</label>
         <input
-          type="text"
+          type="date"
           id="birthdate"
           value={birthDate}
           onChange={(e) => {
