@@ -9,6 +9,7 @@ const AddAnimal = ({
   setDebouncedAnimals,
   closeAddAnimalModal,
   showAddAnimalModal,
+  setShowAddAnimalModal,
 }) => {
   // Setting states
   const [animalName, setAnimalName] = useState("");
@@ -35,11 +36,11 @@ const AddAnimal = ({
     setBirthDate("");
     setMarkings("");
     setBirthWeight("");
-
     // Sadly this is the only way I figured to update state to rerender my animals without creating a loop
     setTimeout(() => {
       setDebouncedAnimals(Math.random());
     }, 100);
+    setShowAddAnimalModal(false);
   };
 
   if (!showAddAnimalModal) {

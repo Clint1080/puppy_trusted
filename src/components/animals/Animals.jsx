@@ -164,6 +164,7 @@ const Animals = ({ kennelId, baseURL }) => {
         kennelId={kennelId}
         setDebouncedAnimals={setDebouncedAnimals}
         closeAddAnimalModal={closeAddAnimalModal}
+        setShowAddAnimalModal={setShowAddAnimalModal}
       />
     </section>
   );
