@@ -93,7 +93,7 @@ const EditAnimal = ({
         />
         <label htmlFor="birthdate">Birth Date</label>
         <input
-          type="text"
+          type="date"
           id="birthdate"
           placeholder={birth_date}
           onChange={(e) => {
