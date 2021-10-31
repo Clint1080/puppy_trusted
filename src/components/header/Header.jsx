@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.scss";
 import Navbar from "../navbar/Navbar";
-import logo from "../../assets/puppy_trusted_logo.jpg";
+import logo from "../../assets/puppytrusted.png";
 
 const Header = () => {
   return (

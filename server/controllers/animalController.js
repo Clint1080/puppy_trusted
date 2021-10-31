@@ -30,6 +30,34 @@ module.exports = {
       console.log(error);
     }
   },
+  updateAnimal: (req, res) => {
+    const { animalId } = req.params;
+    const {
+      editAnimalName,
+      editGender,
+      editMicrochip,
+      editBirthDate,
+      editMarkings,
+      editBirthWeight,
+    } = req.body;
+    try {
+      pool.query(
+        "UPDATE animals SET name=$2, gender=$3, microchip=$4, birth_date=$5, markings=$6, birth_weight=$7 WHERE animal_id=$1 RETURNING *",
+        [
+          animalId,
+          editAnimalName,
+          editGender,
+          editMicrochip,
+          editBirthDate,
+          editMarkings,
+          editBirthWeight,
+        ]
+      );
+      res.status(200);
+    } catch (error) {
+      console.log(error);
+    }
+  },
   deleteAnimal: (req, res) => {
     try {
       const { animalId } = req.params;
