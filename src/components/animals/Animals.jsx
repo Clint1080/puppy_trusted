@@ -40,7 +40,7 @@ const Animals = ({ kennelId, baseURL }) => {
   useEffect(() => {
     getAnimals();
     getKennelName();
-  }, [kennelId, debouncedAnimals]);
+  }, [kennelId, debouncedAnimals, debouncedEditAnimals]);
 
   const editAnimal = (
     animal_id,

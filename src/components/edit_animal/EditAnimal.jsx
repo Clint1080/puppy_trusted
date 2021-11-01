@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./EditAnimal.scss";
 
@@ -34,6 +35,10 @@ const EditAnimal = ({
   const settingDefaultState = () => {
     setEditAnimalName(name);
     setEditGender(gender);
+    setEditBirthDate(birth_date);
+    setEditBirthWeight(birth_weight);
+    setEditMicrochip(microchip);
+    setEditMarkings(markings);
   };
 
   useEffect(() => {
