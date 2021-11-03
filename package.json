@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-start": "cd server && npm install && npm node index.js"
+    "heroku-postbuild": "cd server && npm install && npm node index.js"
   },
   "eslintConfig": {
     "extends": [
