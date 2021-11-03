@@ -40,6 +40,7 @@ const AddAnimal = ({
     setTimeout(() => {
       setDebouncedAnimals(Math.random());
     }, 100);
+    closeAddAnimalModal();
     setShowAddAnimalModal(false);
   };
 
