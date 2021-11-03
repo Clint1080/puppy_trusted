@@ -32,4 +32,9 @@ app.use("/animals", animalRouter);
 // app.post("/animal", aController.postAnimal);
 // app.post("/animals", aController.getAnimals);
 
+// catch everything and send it to root
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build/index.js"));
+});
+
 app.listen(PORT, () => console.log(`server is running on ${PORT}`));

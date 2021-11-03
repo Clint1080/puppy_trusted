@@ -6,7 +6,6 @@ import Login from "../login/Login";
 import Footer from "../footer/Footer";
 
 import "./app.scss";
-import Animals from "../animals/Animals";
 
 function App() {
   //
