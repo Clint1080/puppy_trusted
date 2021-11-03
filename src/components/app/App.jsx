@@ -9,7 +9,9 @@ import "./app.scss";
 import Animals from "../animals/Animals";
 
 function App() {
-  const baseURL = "http://localhost:3001";
+  //
+
+  const baseURL = "";
   return (
     <div className="App">
       <Header />

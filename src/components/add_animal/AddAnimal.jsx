@@ -21,7 +21,7 @@ const AddAnimal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/animals", {
+    axios.post(`${baseURL}/animals`, {
       animalName,
       kennelId,
       gender,
