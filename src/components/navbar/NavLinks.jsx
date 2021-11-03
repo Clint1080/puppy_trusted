@@ -5,11 +5,11 @@ const NavLinks = () => {
     <ul>
       <li>
         <AiOutlineProfile className="profile_icon" />
-        <a href="/">Profile</a>
+        <a href="#">Profile</a>
       </li>
       <li>
         <AiOutlineLogout className="logout_icon" />
-        <a href="/">Log Out</a>
+        <a href="#">Log Out</a>
       </li>
     </ul>
   );
