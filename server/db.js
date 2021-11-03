@@ -9,9 +9,7 @@ const devConfig = {
   database: process.env.PG_DATABASE,
 };
 
-const proConfig = {
-  connectionString: process.env.DATABASE_URL,
-};
+const proConfig = process.env.DATABASE_URL;
 
 const pool = new Pool(
   // @ts-ignore
