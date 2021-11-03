@@ -22,3 +22,5 @@ The purpose of this app is to allow animal breeders to track all data related to
 - Create a custom schedule / timer for setting reminders for example if you have a newborn puppy that needs to be fed every two hours.
   Create more than one Kennel
 - A lot more coming ...
+
+// "build": "react-scripts build",
