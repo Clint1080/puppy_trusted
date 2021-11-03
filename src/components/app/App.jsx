@@ -10,7 +10,7 @@ import "./app.scss";
 function App() {
   //
 
-  const baseURL = "https://db-puppy-trusted.herokuapp.com";
+  const baseURL = "";
   return (
     <div className="App">
       <Header />

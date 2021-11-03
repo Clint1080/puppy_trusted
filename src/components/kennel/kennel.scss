@@ -1,5 +1,9 @@
 // This is for the list of kennels
 .kennel {
+  h2 {
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+  }
   &.container {
     @media screen and (max-width: 767px) {
       padding: 0 1rem;
@@ -10,21 +14,19 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    justify-content: space-between;
+
     margin: 0;
     padding: 0 0 1rem 0;
     @media screen and (min-width: 767px) {
       flex-wrap: wrap;
       overflow-x: unset;
-      justify-content: space-between;
     }
   }
   li.kennel_card {
-    @media screen and (max-width: 767px) {
-      &:not(:first-child) {
-        margin-left: 1.5rem;
-      }
+    &:not(:last-child) {
+      margin-right: 1.5rem;
     }
+    margin-top: 1rem;
     list-style-type: none;
     border: 1px solid #333333;
     background-color: #f4f4f4;
