@@ -59,6 +59,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setAnimalName(e.target.value);
           }}
+          autoComplete="off"
         />
 
         <label htmlFor="gender">Gender M or F</label>
@@ -69,6 +70,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setGender(e.target.value);
           }}
+          autoComplete="off"
         />
 
         <label htmlFor="microchip">Microchip number</label>
@@ -79,6 +81,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setMicrochip(e.target.value);
           }}
+          autoComplete="off"
         />
 
         <label htmlFor="birthdate">Birth Date</label>
@@ -89,6 +92,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setBirthDate(e.target.value);
           }}
+          autoComplete="off"
         />
 
         <label htmlFor="markings">Any specific markings</label>
@@ -99,6 +103,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setMarkings(e.target.value);
           }}
+          autoComplete="off"
         />
 
         <label htmlFor="weight">Birth weight</label>
@@ -109,6 +114,7 @@ const AddAnimal = ({
           onChange={(e) => {
             setBirthWeight(e.target.value);
           }}
+          autoComplete="off"
         />
         <div className="buttons">
           <Button type="click" text="cancel" click={closeAddAnimalModal} />

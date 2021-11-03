@@ -77,6 +77,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditAnimalName(e.target.value);
           }}
+          autoComplete="off"
         />
         <label htmlFor="gender">Gender M or F</label>
         <input
@@ -86,6 +87,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditGender(e.target.value);
           }}
+          autoComplete="off"
         />
         <label htmlFor="microchip">Microchip number</label>
         <input
@@ -95,6 +97,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditMicrochip(e.target.value);
           }}
+          autoComplete="off"
         />
         <label htmlFor="birthdate">Birth Date</label>
         <input
@@ -104,6 +107,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditBirthDate(e.target.value);
           }}
+          autoComplete="off"
         />
         <label htmlFor="markings">Any specific markings</label>
         <input
@@ -113,6 +117,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditMarkings(e.target.value);
           }}
+          autoComplete="off"
         />
         <label htmlFor="weight">Birth weight</label>
         <input
@@ -122,6 +127,7 @@ const EditAnimal = ({
           onChange={(e) => {
             setEditBirthWeight(e.target.value);
           }}
+          autoComplete="off"
         />
         <div className="buttons">
           <Button type="button" text="cancel" click={closeEditModal} />

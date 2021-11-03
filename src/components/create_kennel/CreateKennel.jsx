@@ -35,6 +35,7 @@ const CreateKennel = ({
           onChange={(e) => {
             setKennelName(e.target.value);
           }}
+          autoComplete="off"
         />
         <div className="buttons">
           <Button
