@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
-    "hero-postbuild": "cd server && npm install && npm run build"
+    "heroku-postbuild": "cd server && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
