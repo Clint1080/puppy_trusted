@@ -9,6 +9,8 @@ import AddAnimal from "../add_animal/AddAnimal";
 import Button from "../button/Button";
 import EditAnimal from "../edit_animal/EditAnimal";
 
+// Here is new note
+
 const Animals = ({ kennelId, baseURL }) => {
   // Setting animals state by current state of kennelId
   const [animals, setAnimals] = useState([]);
